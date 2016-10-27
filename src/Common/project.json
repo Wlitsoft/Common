@@ -1,0 +1,34 @@
+﻿{
+  "version": "1.0.0-Beta",
+  "title": "Wlitsoft.Framework.Common",
+  "copyright": "Wlitsoft 2012 - 2016",
+  "description": "Wlitsoft 框架 - 公共类库",
+  "authors": [ "LILIANG" ],
+  "language": "zh-CN",
+  "packOptions": {
+    "repository": {
+      "type": "git",
+      "url": "git://github.com/wlitsoft/common"
+    },
+    "tags": [
+      "common",
+      "wlitsoft",
+      "framework"
+    ]
+  },
+  "dependencies": {
+    "NETStandard.Library": "1.6.0"
+  },
+  "buildOptions": {
+    "outputName": "Wlitsoft.Framework.Common",
+    "keyFile": "../../tools/Wlitsoft.Framework.snk",
+    "nowarn": [ "CS1591" ],
+    "xmlDoc": true
+  },
+
+  "frameworks": {
+    "netstandard1.6": {
+      "imports": "dnxcore50"
+    }
+  }
+}
