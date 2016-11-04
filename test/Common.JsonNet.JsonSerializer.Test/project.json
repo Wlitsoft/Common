@@ -3,7 +3,7 @@
   },
 
   "dependencies": {
-    "Common": "0.1.1-Beta",
+    "Common.JsonNet.JsonSerializer": "0.1.1-Beta",
     "dotnet-test-xunit": "2.2.0-preview2-build1029",
     "Microsoft.NETCore.App": {
       "type": "platform",

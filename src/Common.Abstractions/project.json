@@ -1,8 +1,8 @@
-{
+﻿{
   "version": "0.1.1-Beta",
-  "title": "Wlitsoft.Framework.Common",
+  "title": "Wlitsoft.Framework.Common.Abstractions",
   "copyright": "Wlitsoft 2012 - 2016",
-  "description": "Wlitsoft 框架 - 公共类库",
+  "description": "Wlitsoft 框架 - 公共类库抽象",
   "authors": [ "LILIANG" ],
   "language": "zh-CN",
   "packOptions": {
@@ -17,13 +17,10 @@
     ]
   },
   "dependencies": {
-    "Common.Abstractions": "0.1.1-Beta",
-    "NETStandard.Library": "1.6.0",
-    "System.Runtime.Serialization.Json": "4.0.2",
-    "System.Xml.XmlSerializer": "4.0.11"
+    "NETStandard.Library": "1.6.0"
   },
   "buildOptions": {
-    "outputName": "Wlitsoft.Framework.Common",
+    "outputName": "Wlitsoft.Framework.Common.Abstractions",
     "keyFile": "../../tools/Wlitsoft.Framework.snk",
     "nowarn": [ "CS1591" ],
     "xmlDoc": true

@@ -6,8 +6,8 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>6df879e9-0af3-4dde-8458-ba9c58438a74</ProjectGuid>
-    <RootNamespace>Common.Test</RootNamespace>
+    <ProjectGuid>e443feda-01e7-4ab9-95ce-18915c7227f8</ProjectGuid>
+    <RootNamespace>Common.JsonNet.JsonSerializer.Test</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
