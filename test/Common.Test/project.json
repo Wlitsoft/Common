@@ -1,5 +1,8 @@
 ﻿{
   "buildOptions": {
+    "copyToOutput": {
+      "include": [ "Resources" ]
+    }
   },
 
   "dependencies": {
