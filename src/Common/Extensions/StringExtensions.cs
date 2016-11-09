@@ -7,10 +7,12 @@
  *********************************************************************************************************************/
 
 using System;
+using System.Security.Cryptography;
 using System.Text;
 using System.Xml.Linq;
 using Wlitsoft.Framework.Common.Abstractions.Serialize;
 using Wlitsoft.Framework.Common.Exception;
+using Wlitsoft.Framework.Common.Security;
 
 namespace Wlitsoft.Framework.Common.Extensions
 {
@@ -121,18 +123,55 @@ namespace Wlitsoft.Framework.Common.Extensions
 
         #endregion
 
-        #region 将给定的要加密的字符串（<see cref="encypStr"/>）使用 GB2312 编码方式，获取大写的 MD5 签名字符串
+        #region 获取大写的 MD5 签名字符串
 
         /// <summary>
-        /// 将给定的要加密的字符串（<see paracref="encypStr"/>）使用 GB2312 编码方式，获取大写的 MD5 签名字符串。
+        /// 将给定的要加密的字符串（<see paracref="encypStr"/>）使用 utf8 编码方式，获取大写的 MD5 签名字符串。
         /// </summary>
-        /// <param name="encypStr">要加密的字符串。</param>
+        /// <param name="str">要加密的字符串。</param>
         /// <returns>大写的 MD5 签名字符串。</returns>
-        public static string GetMD5(this string encypStr)
+        public static string GetMD5(this string str)
         {
-            throw new NotImplementedException();
+            return new StringEncrypt(str).GetMD5();
+        }
+
+        /// <summary>
+        /// 将给定的要加密的字符串（<see paracref="encypStr"/>）使用指定编码方式，获取大写的 MD5 签名字符串。
+        /// </summary>
+        /// <param name="str">要加密的字符串。</param>
+        /// <param name="encoding">编码方式。</param>
+        /// <returns>大写的 MD5 签名字符串。</returns>
+        public static string GetMD5(this string str, Encoding encoding)
+        {
+            return new StringEncrypt(str, encoding).GetMD5();
         }
 
         #endregion
+
+        #region 获取 SHA1 签名字符串
+
+        /// <summary>
+        /// 将给定的要加密的字符串（<see paracref="encypStr"/>）使用 utf8 编码方式，获取 SHA1 签名字符串。
+        /// </summary>
+        /// <param name="str">要加密的字符串。</param>
+        /// <returns>大写的 SHA1 签名字符串。</returns>
+        public static string GetSHA1(this string str)
+        {
+            return new StringEncrypt(str).GetSHA1();
+        }
+
+        /// <summary>
+        /// 将给定的要加密的字符串（<see paracref="encypStr"/>）使用指定编码方式，获取 SHA1 签名字符串。
+        /// </summary>
+        /// <param name="str">要加密的字符串。</param>
+        /// <param name="encoding">编码方式。</param>
+        /// <returns>大写的 SHA1 签名字符串。</returns>
+        public static string GetSHA1(this string str, Encoding encoding)
+        {
+            return new StringEncrypt(str, encoding).GetSHA1();
+        }
+
+        #endregion
+
     }
 }

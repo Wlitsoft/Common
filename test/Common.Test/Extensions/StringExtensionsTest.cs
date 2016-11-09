@@ -58,5 +58,27 @@ namespace Common.Test.Extensions
             Assert.Equal<string>("Common", model.Name);
             Assert.Equal<int>(5, model.Age);
         }
+
+        [Fact]
+        public void GetMD5Test()
+        {
+            string str = "hello";
+
+            string expected = "5D41402ABC4B2A76B9719D911017C592";
+            string actual = str.GetMD5();
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void GetSHA1Test()
+        {
+            string str = "hello";
+
+            string expected = "AAF4C61DDCC5E8A2DABEDE0F3B482CD9AEA9434D";
+            string actual = str.GetSHA1();
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

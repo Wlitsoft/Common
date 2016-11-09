@@ -14,10 +14,10 @@ namespace Common.Test.Net
     {
 
         [Fact]
-        public void HttpGetTest()
+        public void HttpGetStringTest()
         {
             HttpReqeustClient client = new HttpReqeustClient();
-            string result = client.HttpGet("http://localhost:5000/api/apitest/get");
+            string result = client.HttpGetString("http://localhost:5000/api/apitest/get");
 
             Assert.NotNull(result);
             Assert.True(result.Length > 0);
@@ -29,10 +29,10 @@ namespace Common.Test.Net
         }
 
         [Fact]
-        public void HttpGetHasParaTest()
+        public void HttpGetStringHasParaTest()
         {
             HttpReqeustClient client = new HttpReqeustClient();
-            string result = client.HttpGet("http://localhost:5000/api/apitest/get/1");
+            string result = client.HttpGetString("http://localhost:5000/api/apitest/get/1");
 
             Assert.NotNull(result);
             Assert.True(result.Length > 0);
@@ -63,7 +63,7 @@ namespace Common.Test.Net
             HttpReqeustClient client = new HttpReqeustClient();
             client.Headers.Add("User-Agent", "HttpReqeustClient");
 
-            string result = client.HttpGet("http://localhost:5000/api/apitest/GetHttpHeaders");
+            string result = client.HttpGetString("http://localhost:5000/api/apitest/GetHttpHeaders");
 
             Assert.NotNull(result);
             Assert.True(result.Length > 0);

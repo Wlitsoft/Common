@@ -11,7 +11,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
 using Wlitsoft.Framework.Common.Exception;
 using Wlitsoft.Framework.Common.Extensions;
 
@@ -35,9 +37,19 @@ namespace Wlitsoft.Framework.Common.Net
         public HttpResponseMessage HttpResponseMessage { get; private set; }
 
         /// <summary>
-        /// 获取或设置Http请求头。
+        /// 获取Http请求头集合。
         /// </summary>
-        public Dictionary<string, string> Headers { get; set; }
+        public Dictionary<string, string> Headers { get; }
+
+        /// <summary>
+        /// 获取或设置Cookie集合容器。
+        /// </summary>
+        public CookieContainer CookieContainer { get; set; }
+
+        /// <summary>
+        /// 获取或设置要使用的安全证书。
+        /// </summary>
+        public X509Certificate Certificate { get; set; }
 
         #endregion
 
@@ -60,10 +72,25 @@ namespace Wlitsoft.Framework.Common.Net
         /// </summary>
         /// <param name="url">要请求的 url 地址。</param>
         /// <returns>服务器响应的文本。</returns>
-        public string HttpGet(string url)
+        public string HttpGetString(string url)
         {
             this.HttpSend(url, HttpMethod.Get, null);
             return this.HttpResponseMessage.GetResultString();
+        }
+
+        #endregion
+
+        #region 根据 <paramref name="url"/> 发送 GET 请求获取响应的二进制数组。
+
+        /// <summary>
+        /// 根据 <paramref name="url"/> 发送 GET 请求获取响应的二进制数组。
+        /// </summary>
+        /// <param name="url">要请求的 url 地址。</param>
+        /// <returns>服务器响应的二进制数组。</returns>
+        public byte[] HttpGetBytes(string url)
+        {
+            this.HttpSend(url, HttpMethod.Get, null);
+            return this.HttpResponseMessage.GetResultBytes();
         }
 
         #endregion
@@ -173,9 +200,20 @@ namespace Wlitsoft.Framework.Common.Net
         /// 创建 <see cref="HttpClient"/> 对象。
         /// </summary>
         /// <returns>初始化完后的 <see cref="HttpClient"/> 对象。</returns>
-        private HttpClient CreateHttpClient(HttpMessageHandler handler = null)
+        private HttpClient CreateHttpClient()
         {
-            HttpClient client = handler == null ? new HttpClient() : new HttpClient(handler);
+            HttpClientHandler handler = new HttpClientHandler();
+
+            if (this.Certificate != null)
+                handler.ClientCertificates.Add(this.Certificate);
+
+            if (this.CookieContainer !=null)
+            {
+                handler.UseCookies = true;
+                handler.CookieContainer = this.CookieContainer;
+            }
+
+            HttpClient client = new HttpClient(handler);
 
             #region Http头
 
@@ -193,5 +231,6 @@ namespace Wlitsoft.Framework.Common.Net
         }
 
         #endregion
+
     }
 }
