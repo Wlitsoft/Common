@@ -11,7 +11,7 @@ using System.IO;
 using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
-using Wlitsoft.Framework.Common.Abstractions.Serialize;
+using Wlitsoft.Framework.Common.Core;
 using Wlitsoft.Framework.Common.Exception;
 
 namespace Wlitsoft.Framework.Common.Serialize
@@ -113,6 +113,5 @@ namespace Wlitsoft.Framework.Common.Serialize
         }
 
         #endregion
-
     }
 }

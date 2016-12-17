@@ -6,12 +6,13 @@
  *      作者：李亮  时间：2016年11月04日	 新建
  * 
  *********************************************************************************************************************/
+
 using System;
 using Newtonsoft.Json;
-using Wlitsoft.Framework.Common.Abstractions.Serialize;
+using Wlitsoft.Framework.Common.Core;
 using Wlitsoft.Framework.Common.Exception;
 
-namespace Common.JsonNet.JsonSerializer
+namespace Wlitsoft.Framework.Common.JsonNet.JsonSerializer
 {
     /// <summary>
     /// JsonNet Json 序列化/反序列化。

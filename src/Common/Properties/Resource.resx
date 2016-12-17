@@ -121,6 +121,6 @@
     <value>参数“{0}”不能为空引用（null）。</value>
   </data>
   <data name="StringNullOrEmptyExceptionMsg" xml:space="preserve">
-    <value>参数“{0}”不能为空字符串（String.Empty）或空引用（null）。</value>
+    <value>参数“{0}”不能为空字符串（String.Empty）或空引用（null）参数“{0}”不能为空字符串（String.Empty）或空引用（null）。</value>
   </data>
 </root>

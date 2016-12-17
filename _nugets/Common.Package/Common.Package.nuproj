@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|AnyCPU">
+      <Configuration>Debug</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|AnyCPU">
+      <Configuration>Release</Configuration>
+      <Platform>AnyCPU</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Common\Common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common.Package.nuspec" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>4b70a6d2-2f1d-4eaa-8fcd-a479f502966a</ProjectGuid>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NuProjPath Condition=" '$(NuProjPath)' == '' ">$(MSBuildExtensionsPath)\NuProj\</NuProjPath>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.props" Condition="Exists('$(NuProjPath)\NuProj.props')" />
+  <PropertyGroup Label="Configuration">
+    <Id>Wlitsoft.Framework.Common</Id>
+    <Title>Wlitsoft 框架 - 公共程序集</Title>
+    <Authors>李亮</Authors>
+    <Owners>李亮</Owners>
+    <Summary>Wlitsoft 框架 - 公共程序集</Summary>
+    <Description>Wlitsoft 框架 - 公共程序集</Description>
+    <ReleaseNotes>
+    </ReleaseNotes>
+    <ProjectUrl>
+    </ProjectUrl>
+    <LicenseUrl>
+    </LicenseUrl>
+    <Copyright>Copyright © 李亮</Copyright>
+    <Tags>Wlitsoft;Framework;Common</Tags>
+    <OutputPath>$(SolutionDir)Nugets</OutputPath>
+    <EmbedSourceFiles>false</EmbedSourceFiles>
+  </PropertyGroup>
+  <Import Project="$(NuProjPath)\NuProj.targets" />
+</Project>

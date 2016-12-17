@@ -10,35 +10,36 @@
 
 namespace Wlitsoft.Framework.Common.Properties {
     using System;
-    using System.Reflection;
     
     
     /// <summary>
-    ///    强类型资源类，用于查找本地化字符串，等等。
+    ///   一个强类型的资源类，用于查找本地化的字符串等。
     /// </summary>
-    // 此类已由 StronglyTypedResourceBuilder 自动生成
-    // 通过 ResGen 或 Visual Studio 之类的工具提供的类。
-    // 若要添加或删除成员，请编辑 .ResX 文件，然后重新运行 ResGen
-    // (使用 /str 选项)，或重新生成 VS 项目。
+    // 此类是由 StronglyTypedResourceBuilder
+    // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
+    // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
+    // (以 /str 作为命令选项)，或重新生成 VS 项目。
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resource {
+    internal class Resource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Resource() {
         }
         
         /// <summary>
-        ///    返回此类使用的缓存 ResourceManager 实例。
+        ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Common.Properties.Resource", typeof(Resource).GetTypeInfo().Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Wlitsoft.Framework.Common.Properties.Resource", typeof(Resource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -46,11 +47,11 @@ namespace Wlitsoft.Framework.Common.Properties {
         }
         
         /// <summary>
-        ///    重写所有项的当前线程的 CurrentUICulture 属性
-        ///    使用此强类型资源类进行资源查找。
+        ///   使用此强类型资源类，为所有资源查找
+        ///   重写当前线程的 CurrentUICulture 属性。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -60,18 +61,18 @@ namespace Wlitsoft.Framework.Common.Properties {
         }
         
         /// <summary>
-        ///    查找与 参数“{0}”不能为空引用（null）。 类似的本地化字符串。
+        ///   查找类似 参数“{0}”不能为空引用（null）。 的本地化字符串。
         /// </summary>
-        public static string ObjectNullExceptionMsg {
+        internal static string ObjectNullExceptionMsg {
             get {
                 return ResourceManager.GetString("ObjectNullExceptionMsg", resourceCulture);
             }
         }
         
         /// <summary>
-        ///    查找与 参数“{0}”不能为空字符串（String.Empty）或空引用（null）。 类似的本地化字符串。
+        ///   查找类似 参数“{0}”不能为空字符串（String.Empty）或空引用（null）参数“{0}”不能为空字符串（String.Empty）或空引用（null）。 的本地化字符串。
         /// </summary>
-        public static string StringNullOrEmptyExceptionMsg {
+        internal static string StringNullOrEmptyExceptionMsg {
             get {
                 return ResourceManager.GetString("StringNullOrEmptyExceptionMsg", resourceCulture);
             }

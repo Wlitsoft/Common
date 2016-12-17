@@ -7,7 +7,7 @@
  * 
  *********************************************************************************************************************/
 using Common.Test.Model;
-using Wlitsoft.Framework.Common.Abstractions.Serialize;
+using Wlitsoft.Framework.Common.Core;
 using Wlitsoft.Framework.Common.Serialize;
 using Xunit;
 

@@ -9,7 +9,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Wlitsoft.Framework.Common.Extensions;
+using Wlitsoft.Framework.Common.Extension;
 
 namespace Wlitsoft.Framework.Common.Security
 {

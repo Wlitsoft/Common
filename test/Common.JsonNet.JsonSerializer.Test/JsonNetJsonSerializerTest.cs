@@ -8,7 +8,8 @@
  *********************************************************************************************************************/
 
 using Common.JsonNet.JsonSerializer.Test.Model;
-using Wlitsoft.Framework.Common.Abstractions.Serialize;
+using Wlitsoft.Framework.Common.Core;
+using Wlitsoft.Framework.Common.JsonNet.JsonSerializer;
 using Xunit;
 
 namespace Common.JsonNet.JsonSerializer.Test
@@ -19,7 +20,7 @@ namespace Common.JsonNet.JsonSerializer.Test
     public class JsonNetJsonSerializerTest
     {
         private readonly ISerializer _serializer;
-        
+
         private readonly string _json = "{\"Age\":5,\"Name\":\"Common\"}";
 
         public JsonNetJsonSerializerTest()

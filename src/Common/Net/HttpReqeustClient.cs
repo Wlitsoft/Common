@@ -15,7 +15,7 @@ using System.Net;
 using System.Net.Http;
 using System.Security.Cryptography.X509Certificates;
 using Wlitsoft.Framework.Common.Exception;
-using Wlitsoft.Framework.Common.Extensions;
+using Wlitsoft.Framework.Common.Extension;
 
 namespace Wlitsoft.Framework.Common.Net
 {
@@ -204,8 +204,9 @@ namespace Wlitsoft.Framework.Common.Net
         {
             HttpClientHandler handler = new HttpClientHandler();
 
-            if (this.Certificate != null)
-                handler.ClientCertificates.Add(this.Certificate);
+            //todo: 设置安全证书，需要修改。
+            //if (this.Certificate != null)
+            //    handler.ClientCertificates.Add(this.Certificate);
 
             if (this.CookieContainer !=null)
             {

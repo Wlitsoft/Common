@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using Wlitsoft.Framework.Common.Extensions;
+using Wlitsoft.Framework.Common.Extension;
 using Wlitsoft.Framework.Common.Net;
 using Xunit;
 

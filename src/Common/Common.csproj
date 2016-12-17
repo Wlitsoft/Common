@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C3DF461-2F2C-4AB9-912F-72DE259D311E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wlitsoft.Framework.Common</RootNamespace>
+    <AssemblyName>Wlitsoft.Framework.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Wlitsoft.Framework.Common.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Globals\Wlitsoft.Framework.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Globals\AuthorInfo.cs">
+      <Link>Globals\AuthorInfo.cs</Link>
+    </Compile>
+    <Compile Include="App.cs" />
+    <Compile Include="Core\ILog.cs" />
+    <Compile Include="Core\ISerializer.cs" />
+    <Compile Include="Core\SerializeType.cs" />
+    <Compile Include="Exception\ObjectNullException.cs" />
+    <Compile Include="Exception\StringNullOrEmptyException.cs" />
+    <Compile Include="Extension\HttpResponseMessageExtension.cs" />
+    <Compile Include="Extension\ObjectExtension.cs" />
+    <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="GlobalConfig.cs" />
+    <Compile Include="Globals\VersionInfo.cs" />
+    <Compile Include="Log\EmptyLogger.cs" />
+    <Compile Include="Log\LoggerSerivce.cs" />
+    <Compile Include="Net\HttpPostDataDictionary.cs" />
+    <Compile Include="Net\HttpPostDataType.cs" />
+    <Compile Include="Net\HttpReqeustClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\ParamsSigner.cs" />
+    <Compile Include="Security\StringEncrypt.cs" />
+    <Compile Include="Serialize\JsonSerializer.cs" />
+    <Compile Include="Serialize\SerializerService.cs" />
+    <Compile Include="Serialize\XmlSerializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Globals\Wlitsoft.Framework.snk" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
