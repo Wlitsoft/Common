@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
 #if DEBUG
-[assembly: AssemblyTitle("Wlitsoft.Framework.Common.Log4Net.Logger 调试版")]
+[assembly: AssemblyTitle("Wlitsoft.Framework.Common.Logger.Log4Net 调试版")]
 #else
-[assembly: AssemblyTitle("Wlitsoft.Framework.Common.Log4Net.Logger 发行版")]
+[assembly: AssemblyTitle("Wlitsoft.Framework.Common.Logger.Log4Net 发行版")]
 #endif
 [assembly: AssemblyDescription("Wlitsoft 框架 - 公共程序集 log4net 日志记录者")]
 [assembly: AssemblyCulture("")]

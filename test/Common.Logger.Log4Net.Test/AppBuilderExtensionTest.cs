@@ -1,6 +1,6 @@
 ﻿using Wlitsoft.Framework.Common;
 using Wlitsoft.Framework.Common.Core;
-using Wlitsoft.Framework.Common.Log4Net.Logger;
+using Wlitsoft.Framework.Common.Logger.Log4Net;
 using Xunit;
 
 namespace Common.Log4Net.Logger.Test

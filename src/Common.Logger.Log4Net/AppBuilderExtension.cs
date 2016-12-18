@@ -14,7 +14,7 @@ using log4net;
 using log4net.Config;
 using Wlitsoft.Framework.Common.Exception;
 
-namespace Wlitsoft.Framework.Common.Log4Net.Logger
+namespace Wlitsoft.Framework.Common.Logger.Log4Net
 {
     /// <summary>
     /// 应用 构造 静态扩展类。

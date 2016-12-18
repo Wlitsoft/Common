@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 using Wlitsoft.Framework.Common.Core;
 using Wlitsoft.Framework.Common.Exception;
 
-namespace Wlitsoft.Framework.Common.JsonNet.JsonSerializer
+namespace Wlitsoft.Framework.Common.Serializer.JsonNet
 {
     /// <summary>
     /// JsonNet Json 序列化/反序列化。

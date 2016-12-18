@@ -7,8 +7,8 @@
     <ProjectGuid>{D8786051-5C80-49D3-A8AF-9711DA5CD49E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wlitsoft.Framework.Common.Log4Net.Logger</RootNamespace>
-    <AssemblyName>Wlitsoft.Framework.Common.Log4Net.Logger</AssemblyName>
+    <RootNamespace>Wlitsoft.Framework.Common.Logger.Log4Net</RootNamespace>
+    <AssemblyName>Wlitsoft.Framework.Common.Logger.Log4Net</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Wlitsoft.Framework.Common.Log4Net.Logger.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Wlitsoft.Framework.Common.Logger.Log4Net.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

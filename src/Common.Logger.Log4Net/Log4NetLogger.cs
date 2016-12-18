@@ -9,7 +9,7 @@
 
 using ILog = Wlitsoft.Framework.Common.Core.ILog;
 
-namespace Wlitsoft.Framework.Common.Log4Net.Logger
+namespace Wlitsoft.Framework.Common.Logger.Log4Net
 {
     /// <summary>
     /// log4net 日志记录者。

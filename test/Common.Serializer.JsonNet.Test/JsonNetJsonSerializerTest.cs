@@ -9,7 +9,7 @@
 
 using Common.JsonNet.JsonSerializer.Test.Model;
 using Wlitsoft.Framework.Common.Core;
-using Wlitsoft.Framework.Common.JsonNet.JsonSerializer;
+using Wlitsoft.Framework.Common.Serializer.JsonNet;
 using Xunit;
 
 namespace Common.JsonNet.JsonSerializer.Test
