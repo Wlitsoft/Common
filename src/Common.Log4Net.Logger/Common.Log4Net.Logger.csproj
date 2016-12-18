@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C3DF461-2F2C-4AB9-912F-72DE259D311E}</ProjectGuid>
+    <ProjectGuid>{D8786051-5C80-49D3-A8AF-9711DA5CD49E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wlitsoft.Framework.Common</RootNamespace>
-    <AssemblyName>Wlitsoft.Framework.Common</AssemblyName>
+    <RootNamespace>Wlitsoft.Framework.Common.Log4Net.Logger</RootNamespace>
+    <AssemblyName>Wlitsoft.Framework.Common.Log4Net.Logger</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -20,7 +20,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Debug\Wlitsoft.Framework.Common.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\Wlitsoft.Framework.Common.Log4Net.Logger.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,9 +37,12 @@
     <AssemblyOriginatorKeyFile>Globals\Wlitsoft.Framework.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,46 +51,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\Globals\AuthorInfo.cs">
+    <Compile Include="..\..\globals\AuthorInfo.cs">
       <Link>Globals\AuthorInfo.cs</Link>
     </Compile>
-    <Compile Include="App.cs" />
-    <Compile Include="AppBuilder.cs" />
-    <Compile Include="Core\ILog.cs" />
-    <Compile Include="Core\ISerializer.cs" />
-    <Compile Include="Core\SerializeType.cs" />
-    <Compile Include="Exception\ObjectNullException.cs" />
-    <Compile Include="Exception\StringNullOrEmptyException.cs" />
-    <Compile Include="Extension\HttpResponseMessageExtension.cs" />
-    <Compile Include="Extension\ObjectExtension.cs" />
-    <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="AppBuilderExtension.cs" />
     <Compile Include="Globals\VersionInfo.cs" />
-    <Compile Include="Log\EmptyLogger.cs" />
-    <Compile Include="Log\LoggerSerivce.cs" />
-    <Compile Include="Net\HttpPostDataDictionary.cs" />
-    <Compile Include="Net\HttpPostDataType.cs" />
-    <Compile Include="Net\HttpReqeustClient.cs" />
+    <Compile Include="Log4NetLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resource.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Security\ParamsSigner.cs" />
-    <Compile Include="Security\StringEncrypt.cs" />
-    <Compile Include="Serialize\JsonSerializer.cs" />
-    <Compile Include="Serialize\SerializerService.cs" />
-    <Compile Include="Serialize\XmlSerializer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{6c3df461-2f2c-4ab9-912f-72de259d311e}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Globals\Wlitsoft.Framework.snk" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <EmbeddedResource Include="Properties\Resource.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,21 +1,37 @@
 ﻿/**********************************************************************************************************************
  * 描述：
- *      空的日志记录者。
+ *      log4net 日志记录者。
  * 
  * 变更历史：
- *      作者：李亮  时间：2016年12月17日	 新建
+ *      作者：李亮  时间：2016年12月18日	 新建
  * 
  *********************************************************************************************************************/
 
-using Wlitsoft.Framework.Common.Core;
+using ILog = Wlitsoft.Framework.Common.Core.ILog;
 
-namespace Wlitsoft.Framework.Common.Log
+namespace Wlitsoft.Framework.Common.Log4Net.Logger
 {
     /// <summary>
-    /// 空的日志记录者。
+    /// log4net 日志记录者。
     /// </summary>
-    public class EmptyLogger : ILog
+    public class Log4NetLogger : ILog
     {
+        //log4net日志。
+        private readonly log4net.ILog _log;
+
+        #region 构造方法
+
+        /// <summary>
+        /// 初始化<see cref="Log4NetLogger"/> 类的新实例。
+        /// <param name="log">log4net 日志记录者。</param>
+        /// </summary>
+        public Log4NetLogger(log4net.ILog log)
+        {
+            this._log = log;
+        }
+
+        #endregion
+
         #region ILog 成员
 
         /// <summary>
@@ -24,7 +40,7 @@ namespace Wlitsoft.Framework.Common.Log
         /// <param name="message">日志信息。</param>
         public void Info(object message)
         {
-
+            this._log.Info(message);
         }
 
         /// <summary>
@@ -33,7 +49,7 @@ namespace Wlitsoft.Framework.Common.Log
         /// <param name="message">日志信息。</param>
         public void Debug(object message)
         {
-
+            this._log.Debug(message);
         }
 
         /// <summary>
@@ -43,7 +59,7 @@ namespace Wlitsoft.Framework.Common.Log
         /// <param name="ex">异常对象。</param>
         public void Debug(object message, System.Exception ex)
         {
-
+            this._log.Debug(message, ex);
         }
 
         /// <summary>
@@ -52,7 +68,7 @@ namespace Wlitsoft.Framework.Common.Log
         /// <param name="message">日志信息。</param>
         public void Error(object message)
         {
-
+            this._log.Error(message);
         }
 
         /// <summary>
@@ -62,7 +78,7 @@ namespace Wlitsoft.Framework.Common.Log
         /// <param name="ex">异常对象。</param>
         public void Error(object message, System.Exception ex)
         {
-
+            this._log.Error(message, ex);
         }
 
         /// <summary>
@@ -71,7 +87,7 @@ namespace Wlitsoft.Framework.Common.Log
         /// <param name="message">日志信息。</param>
         public void Fatal(object message)
         {
-            
+            _log.Fatal(message);
         }
 
         /// <summary>
@@ -81,7 +97,7 @@ namespace Wlitsoft.Framework.Common.Log
         /// <param name="ex">异常对象。</param>
         public void Fatal(object message, System.Exception ex)
         {
-            
+            _log.Fatal(message, ex);
         }
 
         #endregion

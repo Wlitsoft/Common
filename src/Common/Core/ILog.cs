@@ -45,5 +45,18 @@ namespace Wlitsoft.Framework.Common.Core
         /// <param name="message">日志信息。</param>
         /// <param name="ex">异常对象。</param>
         void Error(object message, System.Exception ex);
+
+        /// <summary>
+        /// 记录致命级别日志信息。
+        /// </summary>
+        /// <param name="message">日志信息。</param>
+        void Fatal(object message);
+
+        /// <summary>
+        /// 记录致命级别日志信息包括异常堆栈信息。
+        /// </summary>
+        /// <param name="message">日志信息。</param>
+        /// <param name="ex">异常对象。</param>
+        void Fatal(object message, System.Exception ex);
     }
 }

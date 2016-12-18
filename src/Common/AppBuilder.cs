@@ -1,10 +1,10 @@
 ﻿/**********************************************************************************************************************
  * 描述：
- *      全局配置静态类。
+ *      应用 构造。
  * 
  * 变更历史：
- *      作者：李亮  时间：2016年11月04日	 新建
- *      作者：李亮  时间：2016年12月17日	 重新定位该类作用。
+ *      作者：李亮  时间：2016年12月18日	 新建
+ * 
  *********************************************************************************************************************/
 
 using Wlitsoft.Framework.Common.Core;
@@ -13,16 +13,18 @@ using Wlitsoft.Framework.Common.Exception;
 namespace Wlitsoft.Framework.Common
 {
     /// <summary>
-    /// 全局配置静态类。
+    /// 应用 构造。
     /// </summary>
-    public static class GlobalConfig
+    public class AppBuilder
     {
+        #region 添加序列化者
+
         /// <summary>
-        /// 配置序列化者。
+        /// 添加序列化者。
         /// </summary>
         /// <param name="type">序列化类型。</param>
         /// <param name="serializer">序列化者接口。</param>
-        public static void ConfigSerializer(SerializeType type, ISerializer serializer)
+        public void AddSerializer(SerializeType type, ISerializer serializer)
         {
             #region 参数校验
 
@@ -34,20 +36,30 @@ namespace Wlitsoft.Framework.Common
             App.SerializerService.SetSerializer(type, serializer);
         }
 
+        #endregion
+
+        #region 添加日志记录者
+
         /// <summary>
-        /// 配置日志记录者。
+        /// 添加日志记录者。
         /// </summary>
+        /// <param name="name">日志记录者名称。</param>
         /// <param name="logger">日志接口。</param>
-        public static void ConfigLogger(ILog logger)
+        public void AddLogger(string name, ILog logger)
         {
             #region 参数校验
+
+            if (string.IsNullOrEmpty(name))
+                throw new StringNullOrEmptyException(nameof(name));
 
             if (logger == null)
                 throw new ObjectNullException(nameof(logger));
 
             #endregion
 
-            App.LoggerService.SetLogger(logger);
+            App.LoggerService.SetLogger(name, logger);
         }
+
+        #endregion
     }
 }

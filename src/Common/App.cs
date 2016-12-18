@@ -28,12 +28,18 @@ namespace Wlitsoft.Framework.Common
         public static LoggerService LoggerService { get; private set; }
 
         /// <summary>
+        /// 获取应用构造者。
+        /// </summary>
+        public static AppBuilder Builder { get; private set; }
+
+        /// <summary>
         /// 初始化 <see cref="App"/> 的静态实例。
         /// </summary>
         static App()
         {
             SerializerService = new SerializerService();
             LoggerService = new LoggerService();
+            Builder = new AppBuilder();
         }
     }
 }
