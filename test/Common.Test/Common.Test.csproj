@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extension\DateTimeExtensionTest.cs" />
+    <Compile Include="Extension\EnumExtensionTest.cs" />
     <Compile Include="Extension\LongExtensionTest.cs" />
     <Compile Include="Extension\ObjectExtensionTest.cs" />
     <Compile Include="Extension\StringExtensionTest.cs" />

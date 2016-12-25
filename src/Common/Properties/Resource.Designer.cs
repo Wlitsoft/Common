@@ -61,6 +61,15 @@ namespace Wlitsoft.Framework.Common.Properties {
         }
         
         /// <summary>
+        ///   查找类似 在枚举项（{0}）未找到 Description 标记信息。 的本地化字符串。
+        /// </summary>
+        internal static string EnumItemNotFoundDescription {
+            get {
+                return ResourceManager.GetString("EnumItemNotFoundDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 参数“{0}”不能为空引用（null）。 的本地化字符串。
         /// </summary>
         internal static string ObjectNullExceptionMsg {
