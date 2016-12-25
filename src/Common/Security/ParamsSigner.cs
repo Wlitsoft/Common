@@ -21,9 +21,9 @@ namespace Wlitsoft.Framework.Common.Security
         #region 公共属性
 
         /// <summary>
-        /// 获取或设置合作 Key。
+        /// 获取或设置约定的秘钥。
         /// </summary>
-        public string PartnerKey { get; set; }
+        public string SecretKey { get; set; }
 
         /// <summary>
         /// 获取或设置要前面的参数集合。
@@ -37,10 +37,10 @@ namespace Wlitsoft.Framework.Common.Security
         /// <summary>
         /// 初始化 <see cref="ParamsSigner"/> 类的新实例。
         /// </summary>
-        /// <param name="partnerKey">合作 Key。</param>
-        public ParamsSigner(string partnerKey)
+        /// <param name="secretKey">约定的秘钥。</param>
+        public ParamsSigner(string secretKey)
         {
-            this.PartnerKey = partnerKey;
+            this.SecretKey = secretKey;
             this.Params = new Dictionary<string, string>();
         }
 
@@ -66,7 +66,7 @@ namespace Wlitsoft.Framework.Common.Security
 
                 sb.AppendFormat($"{item.Key}={item.Value}&");
             }
-            sb.AppendFormat($"key={this.PartnerKey}");
+            sb.AppendFormat($"key={this.SecretKey}");
             return sb.ToString().GetMD5(Encoding.UTF8);
         }
 

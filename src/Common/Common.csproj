@@ -76,7 +76,10 @@
     <Compile Include="Security\ParamsSigner.cs" />
     <Compile Include="Security\StringEncrypt.cs" />
     <Compile Include="Serialize\JsonSerializer.cs" />
+    <Compile Include="Serialize\Dynamic\DynamicJson.cs" />
+    <Compile Include="Serialize\Dynamic\DynamicXml.cs" />
     <Compile Include="Serialize\SerializerService.cs" />
+    <Compile Include="Serialize\XmlCDATAElement.cs" />
     <Compile Include="Serialize\XmlSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
