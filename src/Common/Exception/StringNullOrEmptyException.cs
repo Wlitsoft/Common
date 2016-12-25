@@ -4,7 +4,7 @@
  * 
  * 变更历史：
  *      作者：李亮  时间：2016年11月01日	 新建
- * 
+ *      作者：李亮  时间：2016年12月25日	 修正 异常信息参数名称读取错误问题。
  *********************************************************************************************************************/
 using System;
 
@@ -22,7 +22,7 @@ namespace Wlitsoft.Framework.Common.Exception
         /// </summary>
         /// <param name="paraName"></param>
         public StringNullOrEmptyException(string paraName)
-            :base(paraName)
+            : base(string.Empty, paraName)
         {
 
         }

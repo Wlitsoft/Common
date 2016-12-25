@@ -22,7 +22,7 @@ namespace Wlitsoft.Framework.Common.Exception
         /// </summary>
         /// <param name="paraName"></param>
         public ObjectNullException(string paraName)
-            :base(paraName)
+            : base(paraName)
         {
 
         }

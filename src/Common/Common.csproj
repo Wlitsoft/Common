@@ -58,7 +58,9 @@
     <Compile Include="Core\SerializeType.cs" />
     <Compile Include="Exception\ObjectNullException.cs" />
     <Compile Include="Exception\StringNullOrEmptyException.cs" />
+    <Compile Include="Extension\DateTimeExtension.cs" />
     <Compile Include="Extension\HttpResponseMessageExtension.cs" />
+    <Compile Include="Extension\LongExtension.cs" />
     <Compile Include="Extension\ObjectExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Globals\VersionInfo.cs" />

@@ -35,7 +35,13 @@ namespace Wlitsoft.Framework.Common.Logger.Log4Net
 
             #endregion
 
-            XmlConfigurator.Configure(new FileInfo(configFilePath));
+            FileInfo configFileInfo = new FileInfo(configFilePath);
+
+            //校验配置文件是否存在。
+            if (!configFileInfo.Exists)
+                throw new System.Exception($"路径（{configFilePath}）的文件未被发现。");
+
+            XmlConfigurator.Configure(configFileInfo);
             List<ILog> logs = LogManager.GetCurrentLoggers().ToList();
             foreach (ILog log in logs)
             {
