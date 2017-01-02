@@ -4,9 +4,10 @@
  * 
  * 变更历史：
  *      作者：李亮  时间：2016年12月17日	 新建
- * 
+ *      作者：李亮  时间：2016年12月17日	 编辑  添加 获取分布式缓存 属性。
  *********************************************************************************************************************/
 
+using Wlitsoft.Framework.Common.Core;
 using Wlitsoft.Framework.Common.Log;
 using Wlitsoft.Framework.Common.Serialize;
 
@@ -26,6 +27,11 @@ namespace Wlitsoft.Framework.Common
         /// 获取日志服务。
         /// </summary>
         public static LoggerService LoggerService { get; private set; }
+
+        /// <summary>
+        /// 获取分布式缓存。
+        /// </summary>
+        public static IDistributedCache DistributedCache { get; internal set; }
 
         /// <summary>
         /// 获取应用构造者。

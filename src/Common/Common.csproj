@@ -53,6 +53,7 @@
     </Compile>
     <Compile Include="App.cs" />
     <Compile Include="AppBuilder.cs" />
+    <Compile Include="Core\IDistributedCache.cs" />
     <Compile Include="Core\ILog.cs" />
     <Compile Include="Core\ISerializer.cs" />
     <Compile Include="Core\SerializeType.cs" />

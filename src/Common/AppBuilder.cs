@@ -4,7 +4,7 @@
  * 
  * 变更历史：
  *      作者：李亮  时间：2016年12月18日	 新建
- * 
+ *      作者：李亮  时间：2016年12月31日	 编辑  添加 设置分布式缓存 方法。
  *********************************************************************************************************************/
 
 using Wlitsoft.Framework.Common.Core;
@@ -58,6 +58,28 @@ namespace Wlitsoft.Framework.Common
             #endregion
 
             App.LoggerService.SetLogger(name, logger);
+        }
+
+        #endregion
+
+        #region 设置分布式缓存
+
+        /// <summary>
+        /// 设置分布式缓存。
+        /// </summary>
+        /// <param name="cache">分布式缓存实例。</param>
+        /// <returns></returns>
+        public AppBuilder SetDistributedCache(IDistributedCache cache)
+        {
+            #region 参数校验
+
+            if (cache == null)
+                throw new ObjectNullException(nameof(cache));
+
+            #endregion
+
+            App.DistributedCache = cache;
+            return this;
         }
 
         #endregion
