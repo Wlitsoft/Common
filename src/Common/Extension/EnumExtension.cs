@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
+using Wlitsoft.Framework.Common.Exception;
 
 namespace Wlitsoft.Framework.Common.Extension
 {
@@ -34,6 +35,31 @@ namespace Wlitsoft.Framework.Common.Extension
                 throw new System.Exception(string.Format(Properties.Resource.EnumItemNotFoundDescription, enumItem));
 
             return desAttrs.First().Description;
+        }
+
+        /// <summary>
+        /// 根据枚举项上的描述信息获取指定的枚举项。
+        /// </summary>
+        /// <typeparam name="TEnum">枚举类型。</typeparam>
+        /// <param name="des">枚举项描述信息。</param>
+        /// <returns>获取到的枚举项。</returns>
+        public static TEnum GetEnumItemByDescription<TEnum>(string des)
+        {
+
+            #region 参数校验
+
+            if (string.IsNullOrEmpty(des))
+                throw new StringNullOrEmptyException(nameof(des));
+
+            #endregion
+
+            Type enumType = typeof(TEnum);
+            FieldInfo[] finfos = enumType.GetFields(BindingFlags.Public | BindingFlags.Static);
+            FieldInfo info = finfos.FirstOrDefault(p => p.GetCustomAttribute<DescriptionAttribute>(false).Description == des);
+            if (info == null)
+                throw new System.Exception($"在枚举（{enumType.FullName}）中，未发现描述为“{des}”的枚举项。");
+
+            return (TEnum)Enum.Parse(enumType, info.Name);
         }
     }
 }

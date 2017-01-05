@@ -14,6 +14,14 @@ namespace Common.Test.Extension
 
             Assert.Equal<string>("男", text);
         }
+
+        [Fact]
+        public void GetEnumItemByDescriptionTest()
+        {
+            Sex sex = EnumExtension.GetEnumItemByDescription<Sex>("男");
+
+            Assert.Equal<Sex>(Sex.Nan, sex);
+        }
     }
 
     public enum Sex
