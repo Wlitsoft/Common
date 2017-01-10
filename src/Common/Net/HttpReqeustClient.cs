@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 using Wlitsoft.Framework.Common.Exception;
 using Wlitsoft.Framework.Common.Extension;
@@ -202,13 +203,17 @@ namespace Wlitsoft.Framework.Common.Net
         /// <returns>初始化完后的 <see cref="HttpClient"/> 对象。</returns>
         private HttpClient CreateHttpClient()
         {
-            HttpClientHandler handler = new HttpClientHandler();
+            WebRequestHandler handler = new WebRequestHandler();
 
-            //todo: 设置安全证书，需要修改。
-            //if (this.Certificate != null)
-            //    handler.ClientCertificates.Add(this.Certificate);
+            if (this.Certificate != null)
+            {
+                handler.ClientCertificates.Add(this.Certificate);
 
-            if (this.CookieContainer !=null)
+                //设置证书校验回掉。
+                ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, errors) => errors == SslPolicyErrors.None;
+            }
+
+            if (this.CookieContainer != null)
             {
                 handler.UseCookies = true;
                 handler.CookieContainer = this.CookieContainer;

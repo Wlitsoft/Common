@@ -172,5 +172,33 @@ namespace Wlitsoft.Framework.Common.Extension
 
         #endregion
 
+        #region 获取一个新的随机字符串
+
+        /// <summary>
+        /// 获取一个新的随机字符串。
+        /// </summary>
+        /// <param name="length">随机字符串长度。</param>
+        /// <returns>获取到的随机字符串。</returns>
+        public static string NewNonceStr(int length)
+        {
+            Random r = new Random();
+            var sb = new StringBuilder();
+            string[] strs =
+            {
+                "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u",
+                "v", "w", "x", "y", "z",
+                "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U",
+                "V", "W", "X", "Y", "Z"
+            };
+            int strsLength = strs.Length;
+            for (int i = 0; i < length; i++)
+            {
+                sb.Append(strs[r.Next(strsLength - 1)]);
+            }
+            return sb.ToString();
+        }
+
+        #endregion
+
     }
 }

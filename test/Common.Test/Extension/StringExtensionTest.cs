@@ -80,5 +80,14 @@ namespace Common.Test.Extension
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void NewNonceStrTest()
+        {
+            string nonceStr = StringExtension.NewNonceStr(20);
+
+            Assert.NotNull(nonceStr);
+            Assert.Equal(20, nonceStr.Length);
+        }
     }
 }
