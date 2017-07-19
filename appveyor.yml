@@ -5,5 +5,4 @@ branches:
     - master
 before_build:
     nuget restore Wlitsoft.Framework.Common.sln
-test: off
 deploy: off
