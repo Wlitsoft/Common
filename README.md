@@ -1,6 +1,7 @@
 # Wlitsoft.Framework.Common
+[![Build status](https://ci.appveyor.com/api/projects/status/a8op6vx5r19uatve?svg=true)](https://ci.appveyor.com/project/Wlitsoft/common-nr225)
 
-​      该项目是一个开发中经常使用的功能类库，封装了对象序列化反序列化、网络请求、参数加密、日志、缓存接口、以及常用的字符串操作等。
+​该项目是一个开发中经常使用的功能类库，封装了对象序列化反序列化、网络请求、参数加密、日志、缓存接口、以及常用的字符串操作等。
 
 ## 相关配置
 
