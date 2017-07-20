@@ -29,6 +29,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Wlitsoft.Framework.Common.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -98,6 +99,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y $(ProjectDir)\bin\$(ConfigurationName)\$(TargetName).dll $(SolutionDir)\src\NuGet\$(ProjectName)\lib\net45\
+xcopy /y $(ProjectDir)\bin\$(ConfigurationName)\$(TargetName).xml $(SolutionDir)\src\NuGet\$(ProjectName)\lib\net45\
+
+$(SolutionDir)\.nuget\nuget.exe pack $(SolutionDir)\src\NuGet\$(ProjectName)\$(ProjectName).nuspec -OutputDirectory $(SolutionDir)\.nuget\Output</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

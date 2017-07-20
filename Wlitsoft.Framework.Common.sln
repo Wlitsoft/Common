@@ -19,6 +19,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Serializer.JsonNet",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common.Serializer.JsonNet.Test", "test\Common.Serializer.JsonNet.Test\Common.Serializer.JsonNet.Test.csproj", "{5A69AA59-1B8A-4FCF-A595-4AD76CE321FC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuGet", "NuGet", "{8195F83E-461A-4812-8AAE-2BC2D14461F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{C75B2466-5C2C-4859-A57D-45E899B93B01}"
+	ProjectSection(SolutionItems) = preProject
+		src\NuGet\Common\Common.nuspec = src\NuGet\Common\Common.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common.Logger.Log4Net", "Common.Logger.Log4Net", "{44F94B02-54AC-4B37-B8E2-F68A0EC26E0D}"
+	ProjectSection(SolutionItems) = preProject
+		src\NuGet\Common.Logger.Log4Net\Common.Logger.Log4Net.nuspec = src\NuGet\Common.Logger.Log4Net\Common.Logger.Log4Net.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common.Serializer.JsonNet", "Common.Serializer.JsonNet", "{637C4F2B-23FC-4C4C-B002-AA4F16C40711}"
+	ProjectSection(SolutionItems) = preProject
+		src\NuGet\Common.Serializer.JsonNet\Common.Serializer.JsonNet.nuspec = src\NuGet\Common.Serializer.JsonNet\Common.Serializer.JsonNet.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -60,5 +77,9 @@ Global
 		{4111A247-4A0C-4C11-924A-A69A85E342D7} = {79AAFADC-1FB3-4D1A-97C0-702B703205D1}
 		{B57F3331-A875-40D2-8802-21104E28CC32} = {9821178D-6AAB-4B69-8816-EDE3FCFC61AB}
 		{5A69AA59-1B8A-4FCF-A595-4AD76CE321FC} = {79AAFADC-1FB3-4D1A-97C0-702B703205D1}
+		{8195F83E-461A-4812-8AAE-2BC2D14461F3} = {9821178D-6AAB-4B69-8816-EDE3FCFC61AB}
+		{C75B2466-5C2C-4859-A57D-45E899B93B01} = {8195F83E-461A-4812-8AAE-2BC2D14461F3}
+		{44F94B02-54AC-4B37-B8E2-F68A0EC26E0D} = {8195F83E-461A-4812-8AAE-2BC2D14461F3}
+		{637C4F2B-23FC-4C4C-B002-AA4F16C40711} = {8195F83E-461A-4812-8AAE-2BC2D14461F3}
 	EndGlobalSection
 EndGlobal
