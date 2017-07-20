@@ -3,3 +3,6 @@ platform: Any CPU
 before_build:
     nuget restore Wlitsoft.Framework.Common.sln
 test: off
+
+artifacts:
+  - path: '.nuget\Output\*.nupkg'
