@@ -3,6 +3,14 @@
 
 ​该项目是一个开发中经常使用的功能类库，封装了对象序列化反序列化、网络请求、参数加密、日志、缓存接口、以及常用的字符串操作等。
 
+## NuGet
+
+包名称  | 当前版本 |
+-------- | :------------ |
+Wlitsoft.Framework.Common | (https://img.shields.io/nuget/v/Wlitsoft.Framework.Common.svg)](https://www.nuget.org/packages/Wlitsoft.Framework.Common)
+Wlitsoft.Framework.Common.Logger.Log4Net | (https://img.shields.io/nuget/v/Wlitsoft.Framework.Common.Logger.Log4Net.svg)](https://www.nuget.org/packages/Wlitsoft.Framework.Common.Logger.Log4Net)
+Wlitsoft.Framework.Common.Serializer.JsonNet | (https://img.shields.io/nuget/v/Wlitsoft.Framework.Common.Serializer.JsonNet.svg)](https://www.nuget.org/packages/Wlitsoft.Framework.Common.Serializer.JsonNet)
+
 ## 相关配置
 
 在应用初始化代码中可以操作以下配置：
