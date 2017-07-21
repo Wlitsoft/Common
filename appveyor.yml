@@ -1,3 +1,8 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+branches:
+    only:
+    - master
 configuration: Release
 platform: Any CPU
 before_build:
@@ -12,4 +17,4 @@ deploy:
     secure: lhREP5b+1caZPUhktJQ1Brjj0SWjeF7sdP/NKK1PLnK1vt2zqTOkovA04fF19zZ/
   artifact: /.*\.nupkg/
   on:
-    branch: dev-appveyor
+    branch: master
